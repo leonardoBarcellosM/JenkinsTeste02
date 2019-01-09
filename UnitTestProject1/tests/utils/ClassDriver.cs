@@ -47,10 +47,11 @@ namespace AutomacaoFuncional.tests.utils
 
         public void StartDriver(string typeBrowser)
         {
-            //ChromeOptions option2 = new ChromeOptions();
-            //option2.AddArgument("--headless");
-            //Driver = new ChromeDriver(option2);
-            Driver = new ChromeDriver();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.AddArguments("test-type");
+            chromeOptions.AddArguments("no-sandbox");
+            driver = new ChromeDriver(chromeOptions);
+            
         }
 
         public void QuitDriver()
